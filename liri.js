@@ -2,7 +2,7 @@ var fs = require("fs");
 var imdb = require('imdb-api');
 var spotify = require('spotify');
 var Twitter = require('twitter');
-var inquirer = require("inquirer");
+var request = require("request");
 
 
 
