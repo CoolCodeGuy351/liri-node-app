@@ -13,7 +13,6 @@ fs.readFile('keys.js','utf-8', function(error,data){
 
 });
 
-/*
 
 inquirer.prompt([
 
@@ -27,23 +26,18 @@ inquirer.prompt([
 ]).then(function(location) {
 
   // console.log(location.userInput);
-  if(inquirer.input ===    
+  if(inquirer.input === 'my-tweets'){
 
-   * `my-tweets`
+  } else if (inquirer.input === 'spotify-this-song'){
 
-   * `spotify-this-song`
+  } else if (inquirer.input === 'movie-this'){
+  	
+  } else if (inquirer.input === 'do-what-it-says'){
+  	
+  } else{
+  	console.log('Thats not an option!');
+  }
 
-   * `movie-this`
-
-   * `do-what-it-says`)
-
-
-  // Then use the Google Geocoder to Geocode the address
-  geocoder.geocode(location.userInput, function(err, data) {
-
-    console.log(JSON.stringify(data, null, 2));
-  });
 
 });
 
-*/
