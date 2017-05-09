@@ -31,18 +31,11 @@ var client = new Twitter({
 /**
  * Grab a list of favorited tweets
  **/
-client.get('favorites/list', function(error, tweets, response) {
-  
+client.get('statuses/user_timeline', params, function(error, tweets, response) {
   if (!error) {
-
-  console.log(tweets);
-
+    console.log(tweets);
   }
-
-  console.log(tweets);
-
-  });
-
+});
 
 //////////////////////////////////////////////////////////////// SPOTIFY THIS SONG ////////////////////////////////////
 } else if(command == 'spotify-this-song'){
