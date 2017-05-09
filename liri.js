@@ -31,9 +31,11 @@ var client = new Twitter({
 /**
  * Grab a list of favorited tweets
  **/
-client.get('statuses/user_timeline', params, function(error, tweets, response) {
+client.get('statuses/user_timeline', function(error, tweets, response) {
   if (!error) {
-    console.log(tweets);
+    console.log(tweets[0].text);
+    console.log(tweets[1].text);
+    console.log(tweets[2].text);
   }
 });
 
