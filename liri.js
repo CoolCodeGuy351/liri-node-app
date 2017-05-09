@@ -1,10 +1,7 @@
 var fs = require("fs");
-//var imdb = require('imdb-api');
 var spotify = require('spotify');
 var Twitter = require('twitter');
 var request = require("request");
-
-
 
 fs.readFile('keys.js','utf-8', function(error,data){
 	
@@ -12,9 +9,9 @@ fs.readFile('keys.js','utf-8', function(error,data){
 	
 });
 
-
 var command = process.argv[2];
 
+/////////////////////////////////////////////////////////////////// Twitter ////////////////////////////////////////////////
 if(command == 'my-tweets'){
 
   /*var client = new Twitter({
@@ -35,11 +32,16 @@ var client = new Twitter({
  * Grab a list of favorited tweets
  **/
 client.get('favorites/list', function(error, tweets, response) {
+  
   if (!error) {
-    console.log(tweets);
-  }
+
   console.log(tweets);
-});
+
+  }
+
+  console.log(tweets);
+
+  });
 
 
 //////////////////////////////////////////////////////////////// SPOTIFY THIS SONG ////////////////////////////////////
@@ -70,10 +72,10 @@ client.get('favorites/list', function(error, tweets, response) {
         return;
     }
 
-  console.log("*Artists: " + data.tracks.items[0].artists[0].name);
-  console.log("*Song Name: " + data.tracks.items[0].name);
-  console.log("*Preview Link: " + data.tracks.items[0].album.artists[0].external_urls.spotify);
-  console.log("*Album: " + data.tracks.items[0].album.name);
+  console.log("Artist: " + data.tracks.items[0].artists[0].name);
+  console.log("Song Name: " + data.tracks.items[0].name);
+  console.log("Link: " + data.tracks.items[0].album.artists[0].external_urls.spotify);
+  console.log("Album: " + data.tracks.items[0].album.name);
 
 
 });
@@ -117,6 +119,15 @@ request(queryUrl, function(error, response, data) {
     }
 });
 
+////////////////////////////////////////////////////// Do what it says //////////////////////////////////////////////////////////////////
+
 } else if(command == 'do-what-it-says'){
+
+  fs.readFile('random.txt','utf-8', function(error,data){
+  
+  var dataArray = data;
+  console.log(dataArray);
+  
+  });
 
 }
